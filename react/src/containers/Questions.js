@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import Question from '../components/Question';
+import Question from './Question';
 
 class Questions extends Component {
   constructor(props) {
@@ -27,7 +27,7 @@ class Questions extends Component {
         <Question
           key={question.id}
           id={question.id}
-          question={question.body}
+          body={question.body}
         />
       )
     })
