@@ -1,11 +1,14 @@
 import React, { Component } from 'react';
 import QuestionTile from '../components/QuestionTile';
+import AnswerForm from '../components/AnswerForm';
+import AnswerBody from '../components/AnswerBody';
 
 class Question extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      expanded: false
+      expanded: false,
+      body: ""
     }
     this.toggleAnswer = this.toggleAnswer.bind(this);
   };
@@ -16,6 +19,7 @@ class Question extends Component {
   }
 
   render() {
+
     return (
       <QuestionTile
       key={this.props.id}
