@@ -1,7 +1,6 @@
 import React from 'react';
-import { Link } from 'react-router';
 
-const QuestionTitle = ({ id, question }) => {
+const Question = ({ id, question }) => {
     return(
       <div className="question">
         <h1>{question}</h1>
@@ -9,4 +8,4 @@ const QuestionTitle = ({ id, question }) => {
     )
   }
 
-export default QuestionTitle;
+export default Question;
