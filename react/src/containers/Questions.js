@@ -5,7 +5,8 @@ class Questions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: []
+      questions: [],
+      answers: []
     };
   }
 
@@ -13,7 +14,10 @@ class Questions extends Component {
     fetch("/api/v1/questions.json")
       .then((response) => response.json())
       .then((responseData) => {
-        this.setState({questions: responseData});
+        this.setState({
+          questions: responseData.questions,
+          answers: responseData.answers
+        });
       });
   }
 

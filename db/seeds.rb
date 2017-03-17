@@ -27,5 +27,5 @@ categories.each do |category|
 end
 
 questions.each do |question|
-  Question.find_or_create_by!(question: question, category_id: "1")
+  Question.find_or_create_by!(body: question, category_id: "1")
 end
