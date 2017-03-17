@@ -1,12 +1,11 @@
 import React, { Component }  from 'react';
-import Question from './Question';
+import Question from '../components/Question';
 
 class Questions extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      questions: [],
-      answers: []
+      questions: []
     };
   }
 
@@ -14,10 +13,7 @@ class Questions extends Component {
     fetch("/api/v1/questions.json")
       .then((response) => response.json())
       .then((responseData) => {
-        this.setState({
-          questions: responseData.questions,
-          answers: responseData.answers
-        });
+        this.setState({questions: responseData});
       });
   }
 
@@ -27,7 +23,7 @@ class Questions extends Component {
         <Question
           key={question.id}
           id={question.id}
-          body={question.body}
+          question={question.body}
         />
       )
     })
