@@ -1,7 +1,7 @@
 import React, { Component }  from 'react';
-import QuestionTitle from '../components/QuestionTitle';
+import Question from '../components/Question';
 
-class QuestionsIndexContainer extends Component {
+class Questions extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -20,7 +20,7 @@ class QuestionsIndexContainer extends Component {
   render() {
     let questions = this.state.questions.map(question => {
       return(
-        <QuestionTitle
+        <Question
           key={question.id}
           id={question.id}
           question={question.body}
@@ -37,4 +37,4 @@ class QuestionsIndexContainer extends Component {
   }
 }
 
-export default QuestionsIndexContainer;
+export default Questions;
