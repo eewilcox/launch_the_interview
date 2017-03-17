@@ -23,7 +23,7 @@ class QuestionsIndexContainer extends Component {
         <QuestionTitle
           key={question.id}
           id={question.id}
-          question={question.question}
+          question={question.body}
         />
       )
     })
