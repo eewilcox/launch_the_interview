@@ -9,9 +9,9 @@ class Question extends Component {
     this.state = {
       expanded: false,
       body: ""
-    }
+    };
     this.toggleAnswer = this.toggleAnswer.bind(this);
-  };
+  }
 
   toggleAnswer() {
     let nextState = !this.state.expanded;
@@ -22,13 +22,15 @@ class Question extends Component {
     let answer;
     if (this.state.expanded) {
       if (this.props.answer !== "") {
-        answer = <AnswerBody />;
+        answer = <AnswerBody
+                  body={this.props.answer}
+                />;
       }
       else {
         answer = <AnswerForm />;
       }
     }
-    
+
     return (
       <div>
         <QuestionTile

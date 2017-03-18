@@ -1,5 +1,5 @@
 import React, { Component }  from 'react';
-import Question from '../components/Question';
+import Question from './Question';
 
 class Questions extends Component {
   constructor(props) {
@@ -32,7 +32,7 @@ class Questions extends Component {
     })
     return(
       <div className="questions">
-        <h2> List of Questions </h2>
+        <h1> List of Questions </h1>
         {questions}
         {this.props.children}
       </div>

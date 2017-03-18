@@ -3,7 +3,7 @@ import React from 'react';
 const QuestionTile = (props) => {
     return(
       <div onClick={props.toggleAnswer} className="question">
-        <h1>{props.body}</h1>
+        <h3>{props.body}</h3>
       </div>
     )
   }

@@ -3,7 +3,7 @@ import React from 'react';
 const AnswerForm = (props) => {
     return(
       <div>
-        <h1>Form</h1>
+        <h3>Form</h3>
       </div>
     )
   }
