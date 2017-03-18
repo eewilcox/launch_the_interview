@@ -19,14 +19,26 @@ class Question extends Component {
   }
 
   render() {
-
+    let answer;
+    if (this.state.expanded) {
+      if (this.props.answer !== "") {
+        answer = <AnswerBody />;
+      }
+      else {
+        answer = <AnswerForm />;
+      }
+    }
+    
     return (
-      <QuestionTile
-      key={this.props.id}
-      id={this.props.id}
-      body={this.props.body}
-      toggleAnswer={this.toggleAnswer}
-      />
+      <div>
+        <QuestionTile
+        key={this.props.id}
+        id={this.props.id}
+        body={this.props.body}
+        toggleAnswer={this.toggleAnswer}
+        />
+        {answer}
+      </div>
     );
   }
 }
