@@ -7,9 +7,10 @@ class Questions extends Component {
     this.state = {
       info: [],
     };
+    this.getData = this.getData.bind(this);
   }
 
-  componentDidMount() {
+  getData() {
     fetch("/api/v1/questions.json")
       .then((response) => response.json())
       .then((responseData) => {
@@ -17,6 +18,10 @@ class Questions extends Component {
           info: responseData
         });
       });
+  }
+
+  componentDidMount() {
+    this.getData();
   }
 
   render() {
@@ -27,6 +32,7 @@ class Questions extends Component {
           id={question.id}
           body={question.question}
           answer={question.answer}
+          getData={this.getData}
         />
       )
     })
