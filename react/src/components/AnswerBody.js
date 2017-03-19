@@ -2,8 +2,8 @@ import React from 'react';
 
 const AnswerBody = (props) => {
     return(
-      <div>
-        <h3>{props.body}</h3>
+      <div className="panel">
+        <p>{props.body}</p>
       </div>
     )
   }
