@@ -8,7 +8,7 @@ class Question extends Component {
     super(props);
     this.state = {
       expanded: false,
-      body: "",
+      finalBody: "",
       questionId: null,
       answerBody: null,
     };
@@ -44,6 +44,9 @@ class Question extends Component {
         this.setState({
           expanded: false
         });
+        this.setState({
+          finalBody: this.state.answerBody
+        });
       });
   }
 
@@ -62,6 +65,12 @@ class Question extends Component {
         answer =
         <AnswerBody
           body={this.props.answer}
+        />;
+      }
+      else if (this.state.finalBody !== "") {
+        answer =
+        <AnswerBody
+          body={this.state.finalBody}
         />;
       }
       else {
