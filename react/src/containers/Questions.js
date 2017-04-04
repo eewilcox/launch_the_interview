@@ -38,7 +38,7 @@ class Questions extends Component {
     })
     return(
       <div className="questions">
-        <h1> List of Questions </h1>
+        <h3> List of Questions </h3>
         {questions}
         {this.props.children}
       </div>
