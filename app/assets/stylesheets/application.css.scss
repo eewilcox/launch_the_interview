@@ -1,16 +1,31 @@
+@import "font-awesome";
+
 body {
   background: #E5F3F4;
   color: #777777;
-  font-family: "Helvetica Neue", sans-serif;
+  font-family: 'Roboto Slab', serif;
   line-height: 1.5;
 }
 
-h1 {
+h3 {
   color: #ed1a7b;
+  font-size: 1.6875rem;
+  padding-left: 4rem;
 }
 
-h3 {
+h5 {
   color: #008CBA;
+  font-size: 1.125rem;
+}
+
+i {
+  color: #84ce15;
+}
+
+span {
+  font-size: 2.2rem;
+  padding-right: 1rem;
+  vertical-align: middle;
 }
 
 textarea {
@@ -46,4 +61,13 @@ textarea {
     padding: 1.25rem;
     background: #f2f2f2;
     color: #777777;
+}
+
+.question {
+  background-color: #f8f8f9;
+  padding-left: 1rem;
+  padding-bottom: .002rem;
+  padding-top: .002rem;
+  margin-bottom: .09rem;
+
 }
