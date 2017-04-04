@@ -3,14 +3,16 @@ class Api::V1::QuestionsController < ApplicationController
 
   def index
     questions = Question.all
+    answers = Answer.all
     data = []
 
     questions.each do |question|
-      answer = Answer.find_by(question: question)
-      if answer
-        data << {id: question.id, question: question.body, answer: answer.body}
-      else
-        data << {id: question.id, question: question.body, answer: ""}
+      answers.each do |answer|
+        if answer.question_id == question.id
+          data << {id: question.id, question: question.body, answer: answer.body}
+        else
+          data << {id: question.id, question: question.body, answer: ""}
+        end
       end
     end
 
