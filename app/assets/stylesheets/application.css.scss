@@ -71,3 +71,11 @@ textarea {
   margin-bottom: .09rem;
 
 }
+
+.question:hover {
+  background-color: #777777;
+}
+
+.question:hover h5, .question:hover i {
+  color: white;
+}
