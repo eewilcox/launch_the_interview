@@ -3,18 +3,16 @@ class Api::V1::QuestionsController < ApplicationController
 
   def index
     questions = Question.all
-    answers = Answer.all
     data = []
 
     questions.each do |question|
-      answers.each do |answer|
-        if answer.question_id == question.id
-          data << {id: question.id, question: question.body, answer: answer.body}
+      answer = Answer.find_by(question: question)
+        if answer
+          data << {id: question.id, question: question.body, category: question.category_id, answer: answer.body}
         else
-          data << {id: question.id, question: question.body, answer: ""}
+          data << {id: question.id, question: question.body, category: question.category_id, answer: ""}
         end
       end
-    end
 
     render json: data
   end

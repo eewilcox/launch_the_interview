@@ -4,8 +4,10 @@ import Question from './Question';
 class Questions extends Component {
   constructor(props) {
     super(props);
+      let url = location.href.split('/');
     this.state = {
       info: [],
+      location: url[url.length - 1]
     };
     this.getData = this.getData.bind(this);
   }
@@ -26,21 +28,34 @@ class Questions extends Component {
 
   render() {
     let questions = this.state.info.map(question => {
-      return(
-        <Question
-          key={question.id}
-          id={question.id}
-          body={question.question}
-          answer={question.answer}
-          getData={this.getData}
-        />
-      )
+      if (this.state.location === "questions" && question.category === 1) {
+        return(
+          <Question
+            key={question.id}
+            id={question.id}
+            body={question.question}
+            answer={question.answer}
+            getData={this.getData}
+          />
+        )
+      }
+      if (this.state.location === "techquestions" && question.category === 2) {
+        return(
+          <Question
+            key={question.id}
+            id={question.id}
+            body={question.question}
+            answer={question.answer}
+            getData={this.getData}
+          />
+        )
+      }
+
     })
     return(
       <div className="questions">
-        <h3> List of Questions </h3>
+        <h3>Questions:</h3>
         {questions}
-        {this.props.children}
       </div>
     )
   }
