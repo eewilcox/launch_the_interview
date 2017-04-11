@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch, Link } from 'react-router-dom';
 
