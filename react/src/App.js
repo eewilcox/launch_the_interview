@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch, Link } from 'react-router-dom';
 
@@ -8,8 +7,8 @@ const Home = () => (
   <div className="home">
     <Link to="/questions">General Questions</Link>
     <Link to="/techquestions">Technical Questions</Link>
+    <Link to="/companies">Company Interview Info</Link>
     <h4>Project Specific Questions</h4>
-    <h4>Company Specific Questions</h4>
   </div>
 )
 
@@ -18,6 +17,7 @@ const Links = () => (
     <NavLink exact activeClassName="active" to="/">Home</NavLink>
     <NavLink activeClassName="active" to="/questions">General Questions</NavLink>
     <NavLink activeClassName="active" to="/techquestions">Technical Questions</NavLink>
+    <NavLink activeClassName="active" to="/companies">Company Interview Info</NavLink>
   </nav>
 )
 
