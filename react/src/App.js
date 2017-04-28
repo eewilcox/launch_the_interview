@@ -2,6 +2,7 @@ import React from 'react';
 import { BrowserRouter as Router, Route, NavLink, Switch, Link } from 'react-router-dom';
 
 import Questions from './containers/Questions';
+import Companies from './containers/Companies';
 
 const Home = () => (
   <div className="home">
@@ -28,6 +29,7 @@ const App = () => (
         <Route exact path="/" component={Home}/>
         <Route path="/questions" component={Questions}/>
         <Route path="/techquestions" component={Questions}/>
+        <Route path="/companies" component={Companies}/>
     </div>
   </Router>
 );
